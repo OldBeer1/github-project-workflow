@@ -1,14 +1,14 @@
 {
   "Version": 2,
   "Date": "2026-10-14",
-  "Total": 104,
-  "Passed": 104,
+  "Total": 108,
+  "Passed": 108,
   "Failed": 0,
   "Workflow": [
     {
       "PowerShell": "5.1.26100.9444",
-      "Total": 33,
-      "Passed": 33,
+      "Total": 35,
+      "Passed": 35,
       "Failed": 0,
       "Backend": "Stub GitHub metadata and real local bare Git transport; no network mutations",
       "Cases": [
@@ -174,6 +174,16 @@
         },
         {
           "Name": "preflight failure while another publisher holds guard cannot replace shared state",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "incomplete object metadata blocks rather than silently skipping history",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "unreachable secret blob outside publication history is not included in scan scope",
           "Passed": true,
           "Detail": ""
         }
@@ -181,8 +191,8 @@
     },
     {
       "PowerShell": "7.6.5",
-      "Total": 33,
-      "Passed": 33,
+      "Total": 35,
+      "Passed": 35,
       "Failed": 0,
       "Backend": "Stub GitHub metadata and real local bare Git transport; no network mutations",
       "Cases": [
@@ -348,6 +358,16 @@
         },
         {
           "Name": "preflight failure while another publisher holds guard cannot replace shared state",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "incomplete object metadata blocks rather than silently skipping history",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "unreachable secret blob outside publication history is not included in scan scope",
           "Passed": true,
           "Detail": ""
         }
@@ -565,7 +585,7 @@
   "FormatValidation": "Passed",
   "IndependentReview": "Passed after fixes with matching regression cases",
   "RealGitHubV1Verified": true,
-  "RealGitHubV2": "See external delivery report",
-  "HostedCI": "See external delivery report",
+  "RealGitHubV2": "abf1cc376513e91d6678fd282af2f59b935eb04e verified; final compatibility fix delivery in external report",
+  "HostedCI": "Initial run: pwsh success, powershell failure; corrected run linked from external report",
   "CloudWorkInvocation": "Not tested"
 }

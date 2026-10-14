@@ -17,6 +17,8 @@ public class SafeGit {
         result.Append('\\',2*slash);result.Append('"');return result.ToString();
     }
     public static int Main(string[] args) {
+        if(Environment.GetEnvironmentVariable("GH_TEST_EMPTY_METADATA")=="1" &&
+            Array.Exists(args, delegate(string value) {return value.StartsWith("--batch-check");})) return 0;
         string source=Environment.GetEnvironmentVariable("GH_TEST_ADVANCE_SOURCE");
         string marker=Environment.GetEnvironmentVariable("GH_TEST_ADVANCE_MARKER");
         if(Array.IndexOf(args,"push")>=0 && !string.IsNullOrEmpty(source) && !File.Exists(marker)) {

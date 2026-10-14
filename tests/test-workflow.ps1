@@ -56,7 +56,7 @@ function New-Fixture([string]$Name,[bool]$Exists=$false) {
     $env:GIT_CONFIG_VALUE_0=$null
     return [pscustomobject]@{Source=$source;Bare=$bare;Directory=$directory;State=$env:GH_TEST_STATE;Log=$env:GH_TEST_LOG}
 }
-$keys=@('GIT_CONFIG_COUNT','GIT_CONFIG_KEY_0','GIT_CONFIG_VALUE_0','GH_TEST_STATE','GH_TEST_LOG','GH_TEST_FAILURE','GH_TEST_DENY','GIT_TERMINAL_PROMPT','PATH','GH_TEST_REAL_GIT','GH_TEST_BARE','GH_TEST_ADVANCE_SOURCE','GH_TEST_ADVANCE_MARKER')
+$keys=@('GIT_CONFIG_COUNT','GIT_CONFIG_KEY_0','GIT_CONFIG_VALUE_0','GH_TEST_STATE','GH_TEST_LOG','GH_TEST_FAILURE','GH_TEST_DENY','GIT_TERMINAL_PROMPT','PATH','GH_TEST_REAL_GIT','GH_TEST_BARE','GH_TEST_ADVANCE_SOURCE','GH_TEST_ADVANCE_MARKER','GH_TEST_EMPTY_METADATA')
 $before=@{};foreach ($key in $keys) {$before[$key]=[Environment]::GetEnvironmentVariable($key)}
 try {
     $env:GH_TEST_REAL_GIT=$realGit
@@ -353,6 +353,25 @@ try {
             Assert (-not (Test-Path -LiteralPath (Join-Path $f.Source '.git\github-project\state.json'))) 'Failure without lock replaced shared state.'
             Assert (@(Get-ChildItem -LiteralPath (Join-Path $f.Source '.git\github-project\reports') -Filter '*.json').Count -eq 1) 'Unique failure report absent.'
         } finally {$guard.Dispose()}
+    }
+
+
+    Case 'incomplete object metadata blocks rather than silently skipping history' {
+        $f=New-Fixture 'missing-metadata'
+        $env:GH_TEST_EMPTY_METADATA='1'
+        try {Fails {& $publisher -ProjectPath $f.Source -Repository demo -GhPath $stub} 'Incomplete Git object metadata'}
+        finally {$env:GH_TEST_EMPTY_METADATA=$null}
+        Assert (-not (Test-Path -LiteralPath $f.State)) 'Missing metadata permitted repository creation.'
+        Assert (-not (Native 'git.exe' @('-C',$f.Source,'remote'))) 'Missing metadata added origin.'
+    }
+    Case 'unreachable secret blob outside publication history is not included in scan scope' {
+        $f=New-Fixture 'unreachable-object'
+        $orphan=Join-Path $f.Directory 'orphan.txt'
+        Text $orphan ('ghp_'+('d'*36))
+        [void](Native 'git.exe' @('-C',$f.Source,'hash-object','-w',$orphan))
+        $result=& $publisher -ProjectPath $f.Source -Repository demo -GhPath $stub
+        Assert $result.Verified 'Unreachable, unselected blob blocked safe selected history.'
+        Assert ((Native 'git.exe' @('--git-dir',$f.Bare,'ls-tree','--name-only','main')) -notmatch 'orphan') 'Unselected orphan was published.'
     }
 
 } finally {foreach ($key in $keys) {[Environment]::SetEnvironmentVariable($key,$before[$key])}}

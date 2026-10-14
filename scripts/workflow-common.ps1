@@ -174,14 +174,23 @@ function Get-GPPreflight([string]$Root,[string]$Git,[string]$Commit,[string]$Rem
         if ($line -match '^([0-9a-f]{40,64}) (.+)$') {$named[$Matches[1]]=$Matches[2]}
     }
     if ($named.Count) {
-        $metadata=Checked $Git @('-C',$Root,'cat-file','--batch-check=%(objectname) %(objecttype) %(objectsize)') (($named.Keys -join [Environment]::NewLine)+[Environment]::NewLine)
+        # Avoid stdin forwarding differences in Windows PowerShell hosts.
+        # Read metadata only, then retain exactly the objects reachable from the pinned commit.
+        $metadata=Checked $Git @('-C',$Root,'cat-file','--batch-all-objects','--batch-check=%(objectname) %(objecttype) %(objectsize)')
+        $seen=@{}
         foreach ($line in ($metadata -split '\r?\n')) {
-            if ($line -match '^([0-9a-f]+) blob (\d+)$') {
-                $oid=$Matches[1];$size=[long]$Matches[2]
+            if ($line -match '^([0-9a-f]+) (blob|tree|commit|tag) (\d+)$') {
+                $oid=$Matches[1];$type=$Matches[2];$size=[long]$Matches[3]
+                if (-not $named.ContainsKey($oid)) {continue}
+                $seen[$oid]=$true
+                if ($type -ne 'blob') {continue}
                 if (-not $objects.ContainsKey($oid)) {$objects[$oid]=[pscustomobject]@{Path=$named[$oid];Bytes=$size}}
                 $reason=Get-GPExcludedReason $named[$oid] $Config
                 if ($reason) {$issues.Add([pscustomobject]@{Path=$named[$oid];Rule='outgoing-excluded-path';Detail=$reason})}
             }
+        }
+        if (@($named.Keys | Where-Object {-not $seen.ContainsKey($_)}).Count) {
+            throw 'Incomplete Git object metadata; publication is blocked rather than skipping historical content.'
         }
     }
     foreach ($oid in $objects.Keys) {

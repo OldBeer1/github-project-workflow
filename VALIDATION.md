@@ -6,11 +6,11 @@
 
 | 测试 | Windows PowerShell 5.1.26100.9444 | PowerShell 7.6.5 |
 |---|---:|---:|
-| 发布流程隔离回归 | 33/33 | 33/33 |
+| 发布流程隔离回归 | 35/35 | 35/35 |
 | 可选 CI 生成器 | 19/19 | 19/19 |
 | 合计 | 52/52 | 52/52 |
 
-104 项全部通过。逐项结果见 validation-results.json。发布回归使用模拟 GitHub 元数据与真实本地 bare Git 传输，不创建真实测试库。
+108 项全部通过。逐项结果见 validation-results.json。发布回归使用模拟 GitHub 元数据与真实本地 bare Git 传输，不创建真实测试库。
 
 覆盖：新建默认私有库、更新/幂等、目标冲突与 URL 重写、已有非快进/无关历史、用户暂存及未跟踪内容保留、初始化基线、只读自检/预览、非法配置、敏感文件名/令牌内容/已删除历史、旧远程引用、大小阈值、互斥锁、无锁失败状态保护、推送期间并发 HEAD 前进、禁用附带标签、备份与 SHA-256、最近成功提交保留。
 
@@ -39,3 +39,11 @@ v2 的真实发布、安装包及托管 CI 结果另记于本机交付报告；�
 本机安装、当前聊天发现、跨新聊天调用与云端 Work 是不同验证层次。当前环境已列出本技能；未声称所有新聊天或云端工作区已加载并授权。云端需实际技能、项目与认证。
 
 内容扫描仅有限规则及大小阈值，不保证发现所有秘密；备份不是加密/VSS 快照；共享 Git worktree 的备份有布局限制。SSH 凭据推送、GitHub Enterprise、云端非 Windows 等价执行、真实多人竞争 GitHub 分支未实测。本机并发测试使用真实本地 Git 且在推送期间实际创建新提交。
+
+## 首次托管 CI 与修正
+
+提交 abf1cc376513e91d6678fd282af2f59b935eb04e 已实际推送并核对远端。首次托管运行中 PowerShell 7 全通过，Windows PowerShell 5.1 的两项已删除历史敏感内容测试失败：[首次运行](https://github.com/OldBeer1/github-project-workflow/actions/runs/38586052772)。
+
+历史对象元数据查询已改为无需 stdin 的 Git 批量枚举，再严格筛选固定提交可达的命名对象；任何对象元数据缺失都阻断。增加 exit 0 但元数据为空的阻断测试，以及无关不可达秘密 blob 不扩大扫描范围的测试。两代 PowerShell 本地发布回归均为 35/35，CI 生成器各 19/19，共 108/108。
+
+最终托管复跑结果见 [Project checks](https://github.com/OldBeer1/github-project-workflow/actions/workflows/project-checks.yml) 及本机升级交付报告。初次失败保留，不把它称为通过。
