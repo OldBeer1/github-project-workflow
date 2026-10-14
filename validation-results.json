@@ -1,13 +1,14 @@
 {
+  "Version": 2,
   "Date": "2026-10-14",
-  "Total": 38,
-  "Passed": 38,
+  "Total": 104,
+  "Passed": 104,
   "Failed": 0,
-  "PowerShellTests": [
+  "Workflow": [
     {
-      "PowerShell": "7.6.5",
-      "Total": 19,
-      "Passed": 19,
+      "PowerShell": "5.1.26100.9444",
+      "Total": 33,
+      "Passed": 33,
       "Failed": 0,
       "Backend": "Stub GitHub metadata and real local bare Git transport; no network mutations",
       "Cases": [
@@ -105,150 +106,466 @@
           "Name": "Git redirection is refused",
           "Passed": true,
           "Detail": ""
+        },
+        {
+          "Name": "Initialize persists binding and preserves starting staged baseline",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "Plan and WhatIf show scope without writing config reports or remote",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "invalid config is rejected before replacing valid project config",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "tracked sensitive filename blocks before repository creation and produces failure report",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "token contents block and report contains no matched secret value",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "deleted secret in outgoing history still blocks publication",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "configured file size ceiling blocks before remote mutation",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "repository guard serializes publishers without overwriting active state",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "push pins reviewed SHA when another process advances local HEAD during push",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "optional bundled backup is verified and report records archive",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "later preflight failure retains last successfully published commit",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "stale tracking refs cannot hide deleted secret when remote is missing",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "followTags setting cannot publish additional annotated tags",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "preflight failure while another publisher holds guard cannot replace shared state",
+          "Passed": true,
+          "Detail": ""
         }
       ]
     },
+    {
+      "PowerShell": "7.6.5",
+      "Total": 33,
+      "Passed": 33,
+      "Failed": 0,
+      "Backend": "Stub GitHub metadata and real local bare Git transport; no network mutations",
+      "Cases": [
+        {
+          "Name": "parse publisher in current host",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "Inspect permits a future non-Git project and does not create it",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "publish without a reviewed local commit stops before remote creation",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "WhatIf creates neither remote nor origin",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "new repository uses private default and real Git push to isolated bare remote",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "existing repository update uses origin without creating a duplicate",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "idempotent publication does not make empty commits",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "explicit target conflict preserves original origin",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "separate push target is rejected",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "wider repository is not published from an arbitrary subdirectory",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "network failure is not mistaken for a missing repository",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "missing push permission stops publication",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "pushInsteadOf cannot redirect publication to another repository",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "insteadOf cannot redirect the effective fetch target",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "staged and untracked local files are not committed or uploaded by publisher",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "non-fast-forward push preserves newer remote history",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "unbound unrelated history is rejected for nonempty remote",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "detached HEAD refuses publication",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "Git redirection is refused",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "Initialize persists binding and preserves starting staged baseline",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "Plan and WhatIf show scope without writing config reports or remote",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "invalid config is rejected before replacing valid project config",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "tracked sensitive filename blocks before repository creation and produces failure report",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "token contents block and report contains no matched secret value",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "deleted secret in outgoing history still blocks publication",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "configured file size ceiling blocks before remote mutation",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "repository guard serializes publishers without overwriting active state",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "push pins reviewed SHA when another process advances local HEAD during push",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "optional bundled backup is verified and report records archive",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "later preflight failure retains last successfully published commit",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "stale tracking refs cannot hide deleted secret when remote is missing",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "followTags setting cannot publish additional annotated tags",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "preflight failure while another publisher holds guard cannot replace shared state",
+          "Passed": true,
+          "Detail": ""
+        }
+      ]
+    }
+  ],
+  "CI": [
     {
       "PowerShell": "5.1.26100.9444",
       "Total": 19,
       "Passed": 19,
       "Failed": 0,
-      "Backend": "Stub GitHub metadata and real local bare Git transport; no network mutations",
       "Cases": [
         {
-          "Name": "parse publisher in current host",
+          "Name": "generator parses in this PowerShell host",
           "Passed": true,
           "Detail": ""
         },
         {
-          "Name": "Inspect permits a future non-Git project and does not create it",
+          "Name": "WhatIf reads project but creates no workflow directories",
           "Passed": true,
           "Detail": ""
         },
         {
-          "Name": "publish without a reviewed local commit stops before remote creation",
+          "Name": "documentation-only project needs no CI",
           "Passed": true,
           "Detail": ""
         },
         {
-          "Name": "WhatIf creates neither remote nor origin",
+          "Name": "Python compile-only workflow executes and detects invalid source",
           "Passed": true,
           "Detail": ""
         },
         {
-          "Name": "new repository uses private default and real Git push to isolated bare remote",
+          "Name": "unittest workflow executes actual tests and observes failures",
           "Passed": true,
           "Detail": ""
         },
         {
-          "Name": "existing repository update uses origin without creating a duplicate",
+          "Name": "declared pytest reuses requirements without editing dependencies",
           "Passed": true,
           "Detail": ""
         },
         {
-          "Name": "idempotent publication does not make empty commits",
+          "Name": "unconfigured third-party tests stop instead of pretending to compile-test",
           "Passed": true,
           "Detail": ""
         },
         {
-          "Name": "explicit target conflict preserves original origin",
+          "Name": "pytest config without installed pytest stops before writing",
           "Passed": true,
           "Detail": ""
         },
         {
-          "Name": "separate push target is rejected",
+          "Name": "npm workflow executes lockfile install and all existing check scripts",
           "Passed": true,
           "Detail": ""
         },
         {
-          "Name": "wider repository is not published from an arbitrary subdirectory",
+          "Name": "npm projects without existing check scripts need no CI",
           "Passed": true,
           "Detail": ""
         },
         {
-          "Name": "network failure is not mistaken for a missing repository",
+          "Name": "missing npm lockfile is refused without creating one",
           "Passed": true,
           "Detail": ""
         },
         {
-          "Name": "missing push permission stops publication",
+          "Name": "yarn and pnpm projects are refused and original markers preserved",
           "Passed": true,
           "Detail": ""
         },
         {
-          "Name": "pushInsteadOf cannot redirect publication to another repository",
+          "Name": "packageManager declaration rejects non-npm even with npm lockfile",
           "Passed": true,
           "Detail": ""
         },
         {
-          "Name": "insteadOf cannot redirect the effective fetch target",
+          "Name": "Mixed preset generates separate Python and npm jobs",
           "Passed": true,
           "Detail": ""
         },
         {
-          "Name": "staged and untracked local files are not committed or uploaded by publisher",
+          "Name": "existing project-checks file refuses overwrite byte for byte",
           "Passed": true,
           "Detail": ""
         },
         {
-          "Name": "non-fast-forward push preserves newer remote history",
+          "Name": "other workflows remain unchanged when project-checks is added",
           "Passed": true,
           "Detail": ""
         },
         {
-          "Name": "unbound unrelated history is rejected for nonempty remote",
+          "Name": "PowerShell preset tests the portable repository paths under both shells",
           "Passed": true,
           "Detail": ""
         },
         {
-          "Name": "detached HEAD refuses publication",
+          "Name": "generated workflow uses least-privilege triggers and fixed action commits",
           "Passed": true,
           "Detail": ""
         },
         {
-          "Name": "Git redirection is refused",
+          "Name": "invalid paths and version injection refuse without writing",
+          "Passed": true,
+          "Detail": ""
+        }
+      ]
+    },
+    {
+      "PowerShell": "7.6.5",
+      "Total": 19,
+      "Passed": 19,
+      "Failed": 0,
+      "Cases": [
+        {
+          "Name": "generator parses in this PowerShell host",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "WhatIf reads project but creates no workflow directories",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "documentation-only project needs no CI",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "Python compile-only workflow executes and detects invalid source",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "unittest workflow executes actual tests and observes failures",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "declared pytest reuses requirements without editing dependencies",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "unconfigured third-party tests stop instead of pretending to compile-test",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "pytest config without installed pytest stops before writing",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "npm workflow executes lockfile install and all existing check scripts",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "npm projects without existing check scripts need no CI",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "missing npm lockfile is refused without creating one",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "yarn and pnpm projects are refused and original markers preserved",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "packageManager declaration rejects non-npm even with npm lockfile",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "Mixed preset generates separate Python and npm jobs",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "existing project-checks file refuses overwrite byte for byte",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "other workflows remain unchanged when project-checks is added",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "PowerShell preset tests the portable repository paths under both shells",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "generated workflow uses least-privilege triggers and fixed action commits",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "invalid paths and version injection refuse without writing",
           "Passed": true,
           "Detail": ""
         }
       ]
     }
   ],
-  "IndependentForwardEvaluation": "Passed after effective URL validation and PowerShell 5.1 quoting repairs",
-  "SkillFiles": [
-    {
-      "File": "SKILL.md",
-      "SHA256": "76b0ba53e78a7af72c14f50b4a12192c4cc053901496cf9635e319c188d847ee",
-      "InstalledMatches": true
-    },
-    {
-      "File": "agents\\openai.yaml",
-      "SHA256": "fe184f940d45d302df5d4cb008d1ac081134afab9488fa655025044186dfb413",
-      "InstalledMatches": true
-    },
-    {
-      "File": "scripts\\publish-github.ps1",
-      "SHA256": "417c2c17520edc3e9e3b27d00e8b872e9e96ac9a070210e579b1539e703988ad",
-      "InstalledMatches": true
-    },
-    {
-      "File": "references\\portable.md",
-      "SHA256": "2ac2103ce18f3c85d5c7e241720f07a5af6f868b874b0925fc8db9ff8177b8bf",
-      "InstalledMatches": true
-    }
-  ],
-  "ActualGitHubPublication": {
-    "Status": "Verified",
-    "Repository": "OldBeer1/github-project-workflow",
-    "Private": true,
-    "FirstPublication": {
-      "Repository": "OldBeer1/github-project-workflow",
-      "Url": "https://github.com/OldBeer1/github-project-workflow",
-      "Branch": "main",
-      "Commit": "dfa150bd305874eaa7a1c8f5f01e6585a2ace07f",
-      "CommitUrl": "https://github.com/OldBeer1/github-project-workflow/commit/dfa150bd305874eaa7a1c8f5f01e6585a2ace07f",
-      "Created": true,
-      "Verified": true,
-      "HasUncommittedChanges": false
-    }
-  }
+  "FormatValidation": "Passed",
+  "IndependentReview": "Passed after fixes with matching regression cases",
+  "RealGitHubV1Verified": true,
+  "RealGitHubV2": "See external delivery report",
+  "HostedCI": "See external delivery report",
+  "CloudWorkInvocation": "Not tested"
 }

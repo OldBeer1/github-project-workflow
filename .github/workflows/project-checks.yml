@@ -1,0 +1,28 @@
+name: Project checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  powershell:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shell: [pwsh, powershell]
+    defaults:
+      run:
+        shell: ${{ matrix.shell }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Test workflow behavior
+        run: |
+          & './tests/test-workflow.ps1'
+      - name: Test CI generation behavior
+        run: |
+          & './tests/test-ci.ps1'

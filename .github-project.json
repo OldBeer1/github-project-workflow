@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 2,
+  "repository": "OldBeer1/github-project-workflow",
+  "remote": "origin",
+  "branch": "main",
+  "visibility": "Private",
+  "include": [
+    "*"
+  ],
+  "exclude": [
+    ".github-project.local/*",
+    "work/*",
+    "*/work/*"
+  ],
+  "maxFileMiB": 100,
+  "maxTextScanMiB": 1,
+  "backupBeforePublish": false,
+  "backupRoot": null
+}
