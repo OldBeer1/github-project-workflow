@@ -1,0 +1,4 @@
+interface:
+  display_name: "GitHub 项目交付"
+  short_description: "项目开始时绑定 GitHub，完成后自动建库或更新已有仓库"
+  default_prompt: "使用 $github-project 完成这个项目，验证后自动交付到 GitHub；没有仓库就创建私有仓库，已有仓库就更新。"

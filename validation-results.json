@@ -1,0 +1,243 @@
+{
+  "Date": "2026-10-14",
+  "Total": 38,
+  "Passed": 38,
+  "Failed": 0,
+  "PowerShellTests": [
+    {
+      "PowerShell": "7.6.5",
+      "Total": 19,
+      "Passed": 19,
+      "Failed": 0,
+      "Backend": "Stub GitHub metadata and real local bare Git transport; no network mutations",
+      "Cases": [
+        {
+          "Name": "parse publisher in current host",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "Inspect permits a future non-Git project and does not create it",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "publish without a reviewed local commit stops before remote creation",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "WhatIf creates neither remote nor origin",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "new repository uses private default and real Git push to isolated bare remote",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "existing repository update uses origin without creating a duplicate",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "idempotent publication does not make empty commits",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "explicit target conflict preserves original origin",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "separate push target is rejected",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "wider repository is not published from an arbitrary subdirectory",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "network failure is not mistaken for a missing repository",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "missing push permission stops publication",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "pushInsteadOf cannot redirect publication to another repository",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "insteadOf cannot redirect the effective fetch target",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "staged and untracked local files are not committed or uploaded by publisher",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "non-fast-forward push preserves newer remote history",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "unbound unrelated history is rejected for nonempty remote",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "detached HEAD refuses publication",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "Git redirection is refused",
+          "Passed": true,
+          "Detail": ""
+        }
+      ]
+    },
+    {
+      "PowerShell": "5.1.26100.9444",
+      "Total": 19,
+      "Passed": 19,
+      "Failed": 0,
+      "Backend": "Stub GitHub metadata and real local bare Git transport; no network mutations",
+      "Cases": [
+        {
+          "Name": "parse publisher in current host",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "Inspect permits a future non-Git project and does not create it",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "publish without a reviewed local commit stops before remote creation",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "WhatIf creates neither remote nor origin",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "new repository uses private default and real Git push to isolated bare remote",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "existing repository update uses origin without creating a duplicate",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "idempotent publication does not make empty commits",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "explicit target conflict preserves original origin",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "separate push target is rejected",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "wider repository is not published from an arbitrary subdirectory",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "network failure is not mistaken for a missing repository",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "missing push permission stops publication",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "pushInsteadOf cannot redirect publication to another repository",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "insteadOf cannot redirect the effective fetch target",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "staged and untracked local files are not committed or uploaded by publisher",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "non-fast-forward push preserves newer remote history",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "unbound unrelated history is rejected for nonempty remote",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "detached HEAD refuses publication",
+          "Passed": true,
+          "Detail": ""
+        },
+        {
+          "Name": "Git redirection is refused",
+          "Passed": true,
+          "Detail": ""
+        }
+      ]
+    }
+  ],
+  "IndependentForwardEvaluation": "Passed after effective URL validation and PowerShell 5.1 quoting repairs",
+  "SkillFiles": [
+    {
+      "File": "SKILL.md",
+      "SHA256": "76b0ba53e78a7af72c14f50b4a12192c4cc053901496cf9635e319c188d847ee",
+      "InstalledMatches": true
+    },
+    {
+      "File": "agents\\openai.yaml",
+      "SHA256": "fe184f940d45d302df5d4cb008d1ac081134afab9488fa655025044186dfb413",
+      "InstalledMatches": true
+    },
+    {
+      "File": "scripts\\publish-github.ps1",
+      "SHA256": "417c2c17520edc3e9e3b27d00e8b872e9e96ac9a070210e579b1539e703988ad",
+      "InstalledMatches": true
+    },
+    {
+      "File": "references\\portable.md",
+      "SHA256": "2ac2103ce18f3c85d5c7e241720f07a5af6f868b874b0925fc8db9ff8177b8bf",
+      "InstalledMatches": true
+    }
+  ],
+  "ActualGitHubPublication": {
+    "Status": "Pending",
+    "Repository": "OldBeer1/github-project-workflow"
+  }
+}

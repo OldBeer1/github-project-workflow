@@ -1,0 +1,13 @@
+# Local environments and scratch
+.venv/
+node_modules/
+__pycache__/
+work/
+*.log
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
