@@ -237,7 +237,18 @@
     }
   ],
   "ActualGitHubPublication": {
-    "Status": "Pending",
-    "Repository": "OldBeer1/github-project-workflow"
+    "Status": "Verified",
+    "Repository": "OldBeer1/github-project-workflow",
+    "Private": true,
+    "FirstPublication": {
+      "Repository": "OldBeer1/github-project-workflow",
+      "Url": "https://github.com/OldBeer1/github-project-workflow",
+      "Branch": "main",
+      "Commit": "dfa150bd305874eaa7a1c8f5f01e6585a2ace07f",
+      "CommitUrl": "https://github.com/OldBeer1/github-project-workflow/commit/dfa150bd305874eaa7a1c8f5f01e6585a2ace07f",
+      "Created": true,
+      "Verified": true,
+      "HasUncommittedChanges": false
+    }
   }
 }

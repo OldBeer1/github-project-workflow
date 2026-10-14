@@ -12,7 +12,7 @@
 
 ## 真实交付
 
-工作流自身将交付到 OldBeer1/github-project-workflow 私有仓库。首次建库、已有仓库更新、远端 SHA 核对的实际结果将在完成后追加；此段本身不表示发布已经成功。
+已实际创建私有仓库 https://github.com/OldBeer1/github-project-workflow，默认分支 main。首次提交 dfa150bd305874eaa7a1c8f5f01e6585a2ace07f 已推送并通过远端 SHA 比对。GitHub API 已确认 private=true；发布返回 Created=true、Verified=true、HasUncommittedChanges=false。后续更新与幂等运行的完整结果见本次本机交付报告。
 
 ## 能力边界
 
